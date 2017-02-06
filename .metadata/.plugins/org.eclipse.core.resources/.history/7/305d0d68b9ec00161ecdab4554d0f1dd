@@ -1,0 +1,17 @@
+package epackage;
+
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.BeforeTest;
+
+public class TestCase1 {
+	public WebDriver driver;
+	private String baseUrl;
+	private StringBuffer verificationErrors=new StringBuffer();
+	
+	
+	@BeforeTest
+	public void setUp() throws Exception{
+		System.setProperty(, value)
+		
+	}
+}
