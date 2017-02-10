@@ -1,0 +1,47 @@
+package epackage;
+
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
+
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+
+public class TestCase2 extends TestCase1{
+	
+
+	@Test
+	public void testTestCase2() throws Exception{
+		//go to http://live.guru99.com
+		
+		driver.get(baseUrl);
+		driver.findElement(By.linkText("OK")).clear();
+		//2. cliick on the mobile menu
+		//Robot robot=new Robot();
+		//robot.keyPress(KeyEvent.VK_ACCEPT);
+		driver.findElement(By.linkText("MOBILE")).click();
+		//3. In the list of all mobile , read the cost of sony xperia mobile(should be 100)
+	//	driver.switchTo().alert();
+	//	alert.accept();
+		String XPeriaPrice=driver.findElement(By.cssSelector("#product-price-1> span.price")).getText();
+		
+		
+		//4. Click on sony Xperia mobile
+		driver.findElement(By.id("product-collection-image-1 ")).click();
+		//5.Read the Xperia mobile price from details page
+		String detailPrice =driver.findElement(By.cssSelector("span.price")).getText();
+		//product price in list and details page should be equal ($100)
+		System.out.println(XPeriaPrice);
+		System.out.println(detailPrice);
+		Assert.assertEquals(XPeriaPrice, detailPrice);
+		
+		
+	}
+	
+	
+	
+
+}

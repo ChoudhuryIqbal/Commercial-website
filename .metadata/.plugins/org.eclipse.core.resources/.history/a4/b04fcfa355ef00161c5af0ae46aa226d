@@ -1,0 +1,29 @@
+package epackage;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+
+public class TestCase10 {
+	private String baseUrl;
+	private WebDriver driver;
+	private String vUsername="user01";
+	private String vPassword="guru99com";
+	@BeforeTest
+	public void setUp() throws Exception{
+		System.setProperty("webdriver.chrome.driver","C:\\Users\\a\\WorkSpace_Commerce\\EcommerceProject\\src\\ScreenShot\\chromedriver.exe");
+		driver =new ChromeDriver();
+		baseUrl="http://live.guru99.com/index.php/backendlogin";
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+	}
+	
+	@Test
+	public void testTestCase10() throws Exception{
+		//go to backend url
+		driver.get(baseUrl);
+	}
+
+}

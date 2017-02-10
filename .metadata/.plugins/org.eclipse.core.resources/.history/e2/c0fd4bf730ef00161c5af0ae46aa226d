@@ -1,0 +1,73 @@
+package epackage;
+
+import java.io.File;
+import java.util.concurrent.TimeUnit;
+
+import org.apache.commons.io.FileUtils;
+import org.junit.After;
+import org.junit.Before;
+//import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
+
+//import junit.framework.Assert;
+import org.testng.annotations.Test;
+
+
+
+public class TestCase1 {
+	public WebDriver driver;
+	protected String baseUrl;
+	private StringBuffer verificationErrors=new StringBuffer();
+	public int scc=0;
+	
+	@BeforeTest
+	public void setUp() throws Exception{
+		System.setProperty("webdriver.gecko.driver", "C:\\Users\\a\\Selenium_Tutorial\\Java_Selenium\\src\\Drivers\\geckodriver.exe");
+		driver=new FirefoxDriver();
+		baseUrl="http://live.guru99.com/";
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		
+	}
+	
+	
+	public void testDay1TestCase1() throws Exception{
+		driver.get(baseUrl);
+		//verify the title of the page
+		String demoSite=driver.findElement(By.cssSelector("h2")).getText();
+		System.out.println(demoSite);
+		try{
+			//Assert.assertTrue("THIS IS DEMO SITE FOR", deomoSite);
+			Assert.assertEquals("THIS IS DEMO SITE FOR ",demoSite);
+			
+		}
+		catch(Error e){
+			verificationErrors.append(e.toString());
+			
+		}
+		
+		//step 3 : Click on MObile menu
+		driver.findElement(By.xpath(".//*[@id='nav']/ol/li[1]/a")).click();
+		//step 5. In the list of all the mobile. select sortyby
+		new Select(driver.findElement(By.xpath(".//*[@id='top']/body/div[1]/div/div[2]/div/div[2]/div[1]/div[3]/div[1]/div[1]/div/select"))).selectByVisibleText("Name");
+		//step 6 verify all products are sorted by name
+		scc=scc+1;
+		File scrFile=((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+		
+		String png="C:\\Users\\a\\WorkSpace_Commerce\\EcommerceProject\\src\\ScreenShot\\"+scc+".png";
+		FileUtils.copyFile(scrFile, new File(png));
+	}
+	@AfterMethod
+	public void tearDown() throws Exception{
+		driver.close();
+	}
+}

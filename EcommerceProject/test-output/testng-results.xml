@@ -2,24 +2,20 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="9773" started-at="2017-02-06T23:03:38Z" finished-at="2017-02-06T23:03:48Z">
+  <suite name="Default suite" duration-ms="14790" started-at="2017-02-10T05:56:21Z" finished-at="2017-02-10T05:56:36Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="9773" started-at="2017-02-06T23:03:38Z" finished-at="2017-02-06T23:03:48Z">
-      <class name="epackage.TestCase1">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:epackage.TestCase1@59fa1d9b]" name="setUp" is-config="true" duration-ms="7656" started-at="2017-02-06T18:03:38Z" finished-at="2017-02-06T18:03:46Z">
+    <test name="Default test" duration-ms="14790" started-at="2017-02-10T05:56:21Z" finished-at="2017-02-10T05:56:36Z">
+      <class name="epackage.TestCase10">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:epackage.TestCase10@d8355a8]" name="setUp" is-config="true" duration-ms="2902" started-at="2017-02-10T00:56:21Z" finished-at="2017-02-10T00:56:24Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="testDay1TestCase1()[pri:0, instance:epackage.TestCase1@59fa1d9b]" name="testDay1TestCase1" duration-ms="2086" started-at="2017-02-06T18:03:46Z" finished-at="2017-02-06T18:03:48Z">
+        <test-method status="PASS" signature="testTestCase10()[pri:0, instance:epackage.TestCase10@d8355a8]" name="testTestCase10" duration-ms="11864" started-at="2017-02-10T00:56:24Z" finished-at="2017-02-10T00:56:36Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testDay1TestCase1 -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:epackage.TestCase1@59fa1d9b]" name="tearDown" is-config="true" duration-ms="10" started-at="2017-02-06T18:03:48Z" finished-at="2017-02-06T18:03:48Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- epackage.TestCase1 -->
+        </test-method> <!-- testTestCase10 -->
+      </class> <!-- epackage.TestCase10 -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

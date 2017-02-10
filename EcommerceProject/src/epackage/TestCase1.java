@@ -11,6 +11,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
@@ -26,20 +27,22 @@ import org.testng.annotations.Test;
 
 public class TestCase1 {
 	public WebDriver driver;
-	private String baseUrl;
+	protected String baseUrl;
 	private StringBuffer verificationErrors=new StringBuffer();
 	public int scc=0;
 	
-	@BeforeMethod
+	@BeforeTest
 	public void setUp() throws Exception{
-		System.setProperty("webdriver.gecko.driver", "C:\\Users\\a\\Selenium_Tutorial\\Java_Selenium\\src\\Drivers\\geckodriver.exe");
-		driver=new FirefoxDriver();
+		//System.setProperty("webdriver.gecko.driver", "C:\\Users\\a\\Selenium_Tutorial\\Java_Selenium\\src\\Drivers\\geckodriver.exe");
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\a\\WorkSpace_Commerce\\EcommerceProject\\src\\ScreenShot\\chromedriver.exe");
+		driver=new ChromeDriver();
+		//driver=new FirefoxDriver();
 		baseUrl="http://live.guru99.com/";
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		
 	}
 	
-	@Test
+	
 	public void testDay1TestCase1() throws Exception{
 		driver.get(baseUrl);
 		//verify the title of the page
